@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/grayColor"
-    tools:context="fun.opq.myapplication.MainActivity">
+    tools:context="fun.opq.myapplication.controller.MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

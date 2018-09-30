@@ -1,11 +1,10 @@
-package fun.opq.myapplication;
+package fun.opq.myapplication.controller;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.AbsListView;
 
@@ -14,6 +13,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+
+import fun.opq.myapplication.R;
 
 class CalendarAdapter extends BaseAdapter {
     private List<Date> dateArray = new ArrayList();

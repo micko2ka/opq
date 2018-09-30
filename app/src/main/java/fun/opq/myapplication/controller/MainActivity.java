@@ -1,4 +1,4 @@
-package fun.opq.myapplication;
+package fun.opq.myapplication.controller;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.AdapterView;
+import android.widget.Toast;
 
+
+import fun.opq.myapplication.MyThread;
+import fun.opq.myapplication.R;
+
+
+/**
+ *
+ */
 public class MainActivity extends AppCompatActivity {
 
     private TextView titleText;
@@ -37,9 +47,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         calendarGridView = findViewById(R.id.calendarGridView);
+
+        calendarGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String message = position + "が選択されました。";
+                Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
+
+                MyThread myThread = new MyThread();
+                myThread.start();
+
+
+            }
+        });
+
         mCalendarAdapter = new CalendarAdapter(this);
         calendarGridView.setAdapter(mCalendarAdapter);
         titleText.setText(mCalendarAdapter.getTitle());
+
+
     }
 
 }
